@@ -11,5 +11,8 @@ router.post('/login', AuthController.login);
 router.get('/verify/:token', AuthController.verify);
 router.post('/resend', AuthController.resend);
 router.post('/forgot', AuthController.forgotPassword);
+router.get('/reset/:token', AuthController.gotoReset);  // For redirecting to reset page
+router.post('/reset/:id', AuthController.resetPassword); // For resetting password
+
 
 module.exports = router;

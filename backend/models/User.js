@@ -44,6 +44,14 @@ UserSchema.methods.comparePassword = async function (candidatePassword) {
   }
 };
 
+// Method to generate a password reset token
+UserSchema.methods.generateResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString('hex'); // Generate a random token
+  this.resetLink = resetToken;
+  this.resetLinkExpiration = Date.now() + 3600000; // Token expires in 1 hour
+  return resetToken;
+};
+
 UserSchema.methods.toProfileJSONFor = function () {
   return {
     username: this.username,
