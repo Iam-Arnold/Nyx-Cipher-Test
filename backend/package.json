@@ -31,7 +31,7 @@
     "http": "0.0.1-security",
     "isomorphic-fetch": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.8.0",
+    "mongoose": "^6.13.6",
     "mongoose-unique-validator": "^3.1.0",
     "node-fetch": "^3.3.2",
     "node-machine-id": "^1.1.12",

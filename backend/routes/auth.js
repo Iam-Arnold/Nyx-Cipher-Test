@@ -4,7 +4,7 @@ const router = express.Router();
 //------------ Importing Controllers ------------//
 const AuthController = require('../controllers/authController')
 //------------ Importing Middlewares ------------//
-const AuthController = require('../middlewares/UserValidation')
+const UserValidation = require('../middlewares/UserValidation')
 
 router.post('/register', UserValidation, AuthController.register);
 router.post('/login', AuthController.login);
