@@ -3,8 +3,10 @@ const router = express.Router();
 
 //------------ Importing Controllers ------------//
 const AuthController = require('../controllers/authController')
+//------------ Importing Middlewares ------------//
+const AuthController = require('../middlewares/UserValidation')
 
-router.post('/register', AuthController.register);
+router.post('/register', UserValidation, AuthController.register);
 router.post('/login', AuthController.login);
 router.get('/verify/:token', AuthController.verify);
 router.post('/resend', AuthController.resend);
